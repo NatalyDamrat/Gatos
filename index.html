@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções em JavaScript - Curiosidades Tech</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .mensagem {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      min-height: 60px;
+      max-width: 500px;
+      margin: 20px 0;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: #1e3c72;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #ffd633;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💻 Curiosidades sobre Tecnologia</h1>
+  <p class="mensagem" id="mensagem">Clique no botão para descobrir uma curiosidade!</p>
+  <button onclick="mostrarCuriosidade()">Mostrar Curiosidade</button>
+
+  <script>
+    // Array com várias curiosidades
+    const curiosidades = [
+      "O primeiro bug de computador foi uma mariposa real encontrada em 1947 dentro do computador Harvard Mark II.",
+      "O nome 'Wi-Fi' não significa nada! Foi criado apenas para ser fácil de lembrar.",
+      "Existem mais de 700 linguagens de programação no mundo atualmente.",
+      "O primeiro mouse de computador era feito de madeira.",
+      "Cerca de 90% dos dados do mundo foram criados apenas nos últimos dois anos."
+    ];
+
+    // Função que exibe uma curiosidade aleatória
+    function mostrarCuriosidade() {
+      const indice = Math.floor(Math.random() * curiosidades.length);
+      const mensagem = document.getElementById("mensagem");
+      mensagem.textContent = curiosidades[indice];
+    }
+  </script>
+
+</body>
+</html>
